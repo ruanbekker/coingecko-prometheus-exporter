@@ -1,0 +1,5 @@
+scrape_configs:
+  - job_name: 'coingecko-exporter'
+    scrape_interval: 900s
+    static_configs:
+    - targets: ['coingecko-exporter:5000']
