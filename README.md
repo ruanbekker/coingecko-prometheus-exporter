@@ -41,4 +41,8 @@ Assuming that you already have prometheus running, then you can just append the 
 
 ## Docker Hub
 
-The image has been published at `ruanbekker/coingecko-exporter`
+The image has been published at `ruanbekker/coingecko-exporter`, example can be referenced fromt the `docker-compose.yml` or for a copy paste example:
+
+```
+$ docker run -it -e CRYPTO_COINS=bitcoin,ethereum,dogecoin -p 5000:5000 ruanbekker/coingecko-exporter
+```
