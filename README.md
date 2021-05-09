@@ -6,6 +6,7 @@ Prometheus Exporter to return CoinGecko Crypto Currency Results
 Set the cryptocurrency coins in the environment: `CRYPTO_COINS=btc,dogecoin,tron` that you would like to monitor, then:
 
 ```
+$ docker-compose build
 $ docker-compose up -d
 ```
 
