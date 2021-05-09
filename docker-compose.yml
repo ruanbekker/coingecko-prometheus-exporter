@@ -6,7 +6,7 @@ services:
     container_name: coingecko-exporter
     restart: unless-stopped
     ports:
-      - 19093:5000
+      - 5000:5000
     networks:
       - public
 
