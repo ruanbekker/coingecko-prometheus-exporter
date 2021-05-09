@@ -38,3 +38,7 @@ coingecko_current_price{fiat_currency="usd",name="safemoon",symbol="safemoon"} 8
 ```
 
 Assuming that you already have prometheus running, then you can just append the `prometheus.yml` content to your `scrape_configs`. 
+
+## Docker Hub
+
+The image has been published at `ruanbekker/coingecko-exporter`
