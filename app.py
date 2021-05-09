@@ -7,6 +7,7 @@ from prometheus_client import Counter, Gauge, start_http_server, generate_latest
 import requests
 import json
 import time
+import os
 
 GC_REQUEST_URL = "https://api.coingecko.com/api/v3/coins/markets"
 GC_HEADERS = {"content-type": "application/json"}
@@ -17,7 +18,7 @@ GC_PARAMETERS = {
     "page": 1,
     "sparkline": False,
     "price_change_percentage": "24h",
-    "ids": "bitcoin,ethereum,ripple,dogecoin,cardano,safemoon,litecoin,polkadot,chainlink,vechain,tron,zilliqa,digibyte,siacoin"
+    "ids": os.environ['CRYPTO_COINS']
 }
 
 MIME_CONTENT_TYPE = "text/plain; version=0.0.4; charset=utf-8"
