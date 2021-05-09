@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  coingecko-exporter:
+    build: .
+    container_name: coingecko-exporter
+    restart: unless-stopped
+    ports:
+      - 19093:5000
+    networks:
+      - public
+
+networks:
+  public:
+    name: public
