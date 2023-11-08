@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.11"
 
 services:
   coingecko-exporter:
@@ -6,6 +6,7 @@ services:
     container_name: coingecko-exporter
     environment:
       - CRYPTO_COINS=bitcoin,ethereum,ripple,dogecoin,cardano,safemoon,litecoin,polkadot,chainlink,vechain,tron,zilliqa,digibyte,siacoin
+      - CURRENCY=eur
     restart: unless-stopped
     ports:
       - 5000:5000

@@ -9,10 +9,11 @@ import json
 import time
 import os
 
+GC_CURRENCY = os.environ['CURRENCY'].upper()
 GC_REQUEST_URL = "https://api.coingecko.com/api/v3/coins/markets"
 GC_HEADERS = {"content-type": "application/json"}
 GC_PARAMETERS = {
-    "vs_currency": "usd",
+    "vs_currency":  os.environ['CURRENCY'],
     "order": "market_cap_desc",
     "per_page": 100,
     "page": 1,
@@ -47,7 +48,7 @@ def format_prices():
 
 coingecko_current_price = Gauge(
         'coingecko_current_price',
-        'current price of crypto currency in usd',
+        'current price of crypto currency in ' + os.environ['CURRENCY'].upper(),
         ['name', 'symbol', 'fiat_currency']
 )
 
@@ -55,7 +56,7 @@ coingecko_current_price = Gauge(
 def metrics():
     metrics = format_prices()
     for coin_info in metrics:
-        coingecko_current_price.labels(name=coin_info['id'], symbol=coin_info['symbol'], fiat_currency='usd').set(format(coin_info['current_price']))
+        coingecko_current_price.labels(name=coin_info['id'], symbol=coin_info['symbol'], fiat_currency= os.environ['CURRENCY']).set(format(coin_info['current_price']))
     return Response(generate_latest(), mimetype=MIME_CONTENT_TYPE)
 
 if __name__ == '__main__':
