@@ -3,7 +3,7 @@ Prometheus Exporter to return CoinGecko Crypto Currency Results
 
 ## Usage
 
-Set the cryptocurrency coins in the environment: `CRYPTO_COINS=btc,dogecoin,tron` that you would like to monitor, then:
+Set the cryptocurrency coins and fiat currency in the environment: `CRYPTO_COINS=btc,dogecoin,tron` and `CURRENCY=eur` that you would like to monitor, then:
 
 ```
 $ docker-compose build
@@ -19,7 +19,7 @@ $ curl http://localhost:5000/metrics
 python_gc_objects_collected_total{generation="0"} 139.0
 python_gc_objects_collected_total{generation="1"} 257.0
 python_gc_objects_collected_total{generation="2"} 0.0
-# HELP coingecko_current_price current price of crypto currency in usd
+# HELP coingecko_current_price current price of crypto currency in USD
 # TYPE coingecko_current_price gauge
 coingecko_current_price{fiat_currency="usd",name="bitcoin",symbol="btc"} 57374.0
 coingecko_current_price{fiat_currency="usd",name="ethereum",symbol="eth"} 3854.81
@@ -47,8 +47,8 @@ With Grafana you can have something like this:
 
 ## Docker Hub
 
-The image has been published at `ruanbekker/coingecko-exporter`, example can be referenced fromt the `docker-compose.yml` or for a copy paste example:
+The image has been published at `esille/coingecko-exporter`, example can be referenced fromt the `docker-compose.yml` or for a copy paste example:
 
 ```
-$ docker run -it -e CRYPTO_COINS=bitcoin,ethereum,dogecoin -p 5000:5000 ruanbekker/coingecko-exporter
+$ docker run -it -e CRYPTO_COINS=bitcoin,ethereum,dogecoin -e CURRENCY=eur -p 5000:5000 esille/coingecko-exporter
 ```
