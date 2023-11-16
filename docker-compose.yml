@@ -3,7 +3,7 @@ version: "3.11"
 services:
   coingecko-exporter:
     build: .
-    container_name: coingecko-exporter
+    container_name: coingecko-prometheus-exporter
     environment:
       - CRYPTO_COINS=bitcoin,ethereum,ripple,dogecoin,cardano,safemoon,litecoin,polkadot,chainlink,vechain,tron,zilliqa,digibyte,siacoin
       - CURRENCY=eur
