@@ -47,8 +47,8 @@ With Grafana you can have something like this:
 
 ## Docker Hub
 
-The image has been published at `esille/coingecko-exporter`, example can be referenced fromt the `docker-compose.yml` or for a copy paste example:
+The image has been published at `esille/coingecko-prometheus-exporter`, example can be referenced fromt the `docker-compose.yml` or for a copy paste example:
 
 ```
-$ docker run -it -e CRYPTO_COINS=bitcoin,ethereum,dogecoin -e CURRENCY=eur -p 5000:5000 esille/coingecko-exporter
+$ docker run -it -e CRYPTO_COINS=bitcoin,ethereum,dogecoin -e CURRENCY=eur -p 5000:5000 esille/coingecko-prometheus-exporter
 ```
